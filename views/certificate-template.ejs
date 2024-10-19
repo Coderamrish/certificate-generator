@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('/certificate-bg.jpg'); /* Ensure this path is correct */
+            background-size: cover;
+            color: #333;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 20px;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Certificate of Completion</h1>
+        <h2>This is to certify that</h2>
+        <h1><%= username %></h1> <!-- Use EJS syntax to dynamically display the username -->
+        <p>has successfully completed the quiz with a score of <%= quizScore %> %.</p> <!-- Display the quiz score -->
+        <footer>
+            Awarded on <%= date %> <!-- Display the date -->
+        </footer>
+    </div>
+</body>
+</html>

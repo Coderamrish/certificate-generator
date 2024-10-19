@@ -1,0 +1,141 @@
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6cd7d2 0%, #2575fc 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents unwanted scroll */
+}
+
+/* Glassmorphism Container */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.container:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Glow Animation for the container */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(106, 17, 203, 0.4), rgba(37, 117, 252, 0.4));
+    opacity: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.container:hover::before {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+/* Title Styling */
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 14px;
+    margin: 12px 0;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: border 0.4s ease, box-shadow 0.4s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 10px rgba(103, 24, 186, 0.7);
+    outline: none;
+}
+
+/* Submit Button Styling */
+button {
+    padding: 15px;
+    background: linear-gradient(135deg, #6a11cb, #25fcc3);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #25fcb1, #17d7a1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(106, 17, 203, 0.5);
+}
+
+/* Message Styling */
+#message {
+    margin-top: 20px;
+    color: #e7b93c;
+    font-size: 16px;
+    animation: shake 0.3s ease;
+}
+
+/* Animation for error messages */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-4px);
+    }
+    50% {
+        transform: translateX(4px);
+    }
+    75% {
+        transform: translateX(-4px);
+    }
+}
+
+/* Hover Glow for Inputs */
+input[type="text"]:hover,
+input[type="number"]:hover {
+    box-shadow: 0 6px 20px rgba(253, 251, 255, 0.3);
+}
+
+/* Button Click Animation */
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(106, 17, 203, 0.6);
+}

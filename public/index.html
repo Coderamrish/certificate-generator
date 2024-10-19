@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get your Certificate</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Completion Certificate</h1>
+        <form id="certificateForm">
+            <input type="text" id="username" placeholder="Enter your name" required>
+            <input type="number" id="quizScore" placeholder="Enter your score" required>
+            <button type="submit">Generate Certificate</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <script>
+        document.getElementById('certificateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const quizScore = document.getElementById('quizScore').value;
+
+            fetch('/generate-certificate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, quizScore }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.link) {
+                    window.open(data.link, '_blank'); // Open the PDF link in a new tab
+                } else {
+                    document.getElementById('message').innerText = data.message;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('message').innerText = 'An error occurred. Please try again.';
+            });
+        });
+    </script>
+</body>
+</html>
