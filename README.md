@@ -55,7 +55,7 @@ Effortlessly input user details and preview certificates in real time.
 Follow these steps to set up and run the project on your local machine.
 
 1. Clone the Repository
-git clone https://github.com/yourusername/certificate-generator.git
+git clone https://github.com/coderamrish/certificate-generator.git
 cd certificate-generator
 2. Install Dependencies
 Make sure you are in the project root directory and run the following command:
