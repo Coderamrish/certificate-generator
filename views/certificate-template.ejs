@@ -3,51 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificate</title>
+    <title>Certificate of Completion</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
         body {
             margin: 0;
             padding: 0;
-            background-image: url('/certificate-bg.jpg'); /* Ensure this path is correct */
+            background: url('/certificate-bg.jpg') no-repeat center center fixed; /* Ensure this path is correct */
             background-size: cover;
-            color: #333;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
         }
-        .container {
+        
+        .certificate {
             width: 80%;
-            margin: auto;
-            padding: 50px;
-            background-color: rgba(255, 255, 255, 0.8);
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 10px solid gold;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
+
         h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            font-size: 28px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
+            color: #DAA520;
             margin-bottom: 10px;
         }
-        p {
-            font-size: 20px;
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
         }
-        footer {
+
+        .recipient {
+            font-size: 32px;
+            font-weight: bold;
+            color: #222;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+
+        .score {
+            font-size: 22px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .date {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .signature-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-top: 50px;
-            font-size: 16px;
+            padding: 0 40px;
+        }
+
+        .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 28px;
+            border-top: 2px solid #000;
+            width: 40%;
+            text-align: center;
+            color: #444;
+        }
+
+        .seal {
+            width: 80px;
+            height: 80px;
+            background: gold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="certificate">
         <h1>Certificate of Completion</h1>
         <h2>This is to certify that</h2>
-        <h1><%= username %></h1> <!-- Use EJS syntax to dynamically display the username -->
-        <p>has successfully completed the quiz with a score of <%= quizScore %> %.</p> <!-- Display the quiz score -->
-        <footer>
-            Awarded on <%= date %> <!-- Display the date -->
-        </footer>
+        <div class="recipient"><%= username %></div> <!-- Display the username dynamically -->
+        <p>has successfully completed the quiz with a score of</p>
+        <div class="score"><%= quizScore %>%</div> <!-- Display the quiz score -->
+        <p>in recognition of their dedication and excellence.</p>
+        
+        <div class="date">Awarded on <%= date %></div> <!-- Display the date -->
+
+        <div class="signature-container">
+            <div class="signature">Authorized Signature</div>
+            <div class="seal">✓ Official</div>
+        </div>
     </div>
 </body>
 </html>

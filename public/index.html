@@ -3,19 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get your Certificate</title>
+    <title>Get Your Certificate</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Quiz Completion Certificate</h1>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">CertifyMe</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#generate">Generate Certificate</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-text">
+            <h1>🎓 Get Your Quiz Completion Certificate</h1>
+            <p>Score 70% or more and receive a personalized certificate instantly.</p>
+            <a href="#generate" class="btn">Generate Now</a>
+        </div>
+        <img src="certificate-preview.png" alt="Certificate Preview">
+    </header>
+
+    <!-- Our Services Section -->
+    <section id="services" class="services">
+        <h2>Why Get Certified?</h2>
+        <div class="service-container">
+            <div class="service-box">
+                <img src="icon1.png" alt="Recognition">
+                <h3>Recognized Achievement</h3>
+                <p>Boost your resume with official certification.</p>
+            </div>
+            <div class="service-box">
+                <img src="icon2.png" alt="Instant Access">
+                <h3>Instant Access</h3>
+                <p>Download your certificate immediately after passing.</p>
+            </div>
+            <div class="service-box">
+                <img src="icon3.png" alt="Shareable">
+                <h3>Share Anywhere</h3>
+                <p>Share your certificate on LinkedIn & social media.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Form Section -->
+    <section id="generate" class="certificate-section">
+        <h2>Generate Your Certificate</h2>
         <form id="certificateForm">
             <input type="text" id="username" placeholder="Enter your name" required>
             <input type="number" id="quizScore" placeholder="Enter your score" required>
             <button type="submit">Generate Certificate</button>
         </form>
         <div id="message"></div>
-    </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <p>&copy; 2024 CertifyMe | Made with ❤️</p>
+        <p>Contact: support@certifyme.com | Follow us on <a href="#">LinkedIn</a> & <a href="#">Twitter</a></p>
+    </footer>
+
     <script>
         document.getElementById('certificateForm').addEventListener('submit', function(e) {
             e.preventDefault();
